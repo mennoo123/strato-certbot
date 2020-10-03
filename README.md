@@ -1,5 +1,5 @@
 # strato-certbot
-Wildcard certificates for strato.de
+Wildcard certificates for strato.nl
 
 ## Setup
 
