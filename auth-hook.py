@@ -11,7 +11,7 @@ def main():
         username = auth["username"]
         password = auth["password"]
 
-    api_url = "https://www.strato.de/apps/CustomerService"
+    api_url = "https://www.strato.nl/apps/CustomerService"
     txt_key = "_acme-challenge"
     txt_value = os.environ["CERTBOT_VALIDATION"]
     domain_name = re.search(r"(\w+\.\w+)$", os.environ["CERTBOT_DOMAIN"]).group(1)
@@ -26,7 +26,7 @@ def main():
     session_id = re.search(r"sessionID=(.*?)\"", request.text).group(1)
 
     # set txt record
-    http_session.post(api_url, { "sessionID": session_id, "cID": "1", "node": "ManageDomains", "vhost": domain_name, "spf_type": "NONE", "prefix": txt_key, "type": "TXT", "value": txt_value, "action_change_txt_records": "Einstellung+übernehmen" })
+    http_session.post(api_url, { "sessionID": session_id, "cID": "1", "node": "ManageDomains", "vhost": domain_name, "spf_type": "NONE", "prefix": txt_key, "type": "TXT", "value": txt_value, "action_change_txt_records": "Instellingen doorvoeren" })
 
 if __name__ == "__main__":
     main()
